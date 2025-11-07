@@ -1,0 +1,20 @@
+
+// Ana Renk Paleti
+$primary-color: #00b894; // canlı yeşil (buton & vurgu)
+$primary-dark: #009975; // koyu yeşil ton
+$accent-color: #00ffb3; // neon yeşil efektler için
+$secondary-color: #121212; // koyu arka plan
+$background-color: #181a1b; // genel sayfa arka planı
+$card-bg: #1f2424; // kart arka planı
+$border-color: #2c3a3a; // kenar çizgileri
+$text-color: #e0e0e0; // ana yazı rengi
+$text-muted: #a5a5a5; // ikincil yazı rengi
+$shadow-color: rgba(0, 0, 0, 0.4);
+
+// Geçişler ve Efektler
+$transition-fast: 0.25s ease;
+$transition-medium: 0.4s ease;
+
+// Gradientler
+$gradient-main: linear-gradient(90deg, $primary-color, $primary-dark);
+$gradient-accent: linear-gradient(260deg, #111818, #141c1a, #16322b, #121c18);
