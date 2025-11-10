@@ -5,6 +5,7 @@ import "./login-form.scss";
 import TextInput from "../form-fields/text-input";
 import { PasswordInput } from "../form-fields/password-input";
 import { SubmitButton } from "../form-fields/submit-button";
+import { loginFormTitle } from "@/helpers/config";
 
 export const LoginForm = ({ children }) => {
   return (
@@ -13,22 +14,22 @@ export const LoginForm = ({ children }) => {
         <Col sm={12}>
           <Card>
             <Card.Body>
-              <h4 className="mb-2">Please enter your Username and Password</h4>
+              <h4 className="mb-3">{loginFormTitle}</h4>
 
               <Form>
                 <TextInput
                   label="Username"
                   name="username"
                   error=""
-                  defaultValue="12345aA."
+                  defaultValue=""
                 />
                 <PasswordInput
                   label="Password"
                   name="password"
                   error=""
-                  defaultValue="12345aA."
+                  defaultValue=""
                 />
-                <SubmitButton className="mt-2 w-100" title="Login" />
+                <SubmitButton className="mt-2 w-100" title="Remember Me!" />
               </Form>
             </Card.Body>
           </Card>

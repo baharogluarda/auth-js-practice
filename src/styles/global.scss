@@ -1,10 +1,14 @@
-@import "bootstrap/dist/css/bootstrap.min.css"; 
-@import "primeicons/primeicons.css";
-@import "variables";
+// styles/global.scss
+
+// Dış kütüphaneler için @import yerine @use kullanıyoruz
+@use "bootstrap/dist/css/bootstrap.min.css";
+@use "primeicons/primeicons.css";
+
+// Proje içi SCSS değişkenlerini global hale getiriyoruz
+@use "variables" as *;
 
 html,
 body {
-  background-color: rgb(218, 214, 214);
   display: flex;
   justify-content: center;
   flex-direction: column;
@@ -17,7 +21,6 @@ body {
   color: $text-color;
   margin: 0;
   padding: 0;
-  min-height: 100vh;
 }
 
 * {

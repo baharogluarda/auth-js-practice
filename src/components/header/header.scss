@@ -1,40 +1,36 @@
-@import "../../styles/variables";
+@use "../../styles/variables" as v;
+@use "../../styles/mixins" as m;
 
 .main-header {
   top: 0;
   width: 100%;
   text-align: center;
   padding: 4rem 1rem;
-  background: $gradient-accent;
+  background: v.$gradient-accent;
   background-size: 600% 600%;
-  animation: gradientFlow 8s ease infinite;
-  color: $text-color;
+  @include m.gradientFlow; // mixin ile animasyonu ekledik
+  color: v.$text-color;
   position: absolute;
-  box-shadow: 0 5px 20px $shadow-color;
+  box-shadow: 0 5px 20px v.$shadow-color;
   letter-spacing: 1px;
 
   h1 {
     font-size: 3rem;
     margin-bottom: 1rem;
-    animation: bounceIn 1s ease;
-    color: $accent-color;
-
-    span {
-      display: inline-block;
-      animation: emojiWave 2s infinite ease-in-out;
-    }
+    @include m.bounceIn; // bounceIn animasyonu
+    color: v.$accent-color;
   }
 
   h2 {
     font-size: 1.4rem;
     opacity: 0.8;
-    color: $text-muted;
-    animation: fadeIn 2s ease-in forwards;
+    color: v.$text-muted;
+    @include m.fadeIn; // fadeIn animasyonu
   }
 
   &:hover {
     transform: scale(1.02);
-    transition: all $transition-medium;
+    transition: all v.$transition-medium;
   }
 
   @media (max-width: 400px) {
@@ -43,63 +39,8 @@
     h1 {
       font-size: 2.2rem;
     }
-
     h2 {
       font-size: 1rem;
     }
-  }
-}
-
-// 🔁 Animasyonlar
-@keyframes gradientFlow {
-  0% {
-    background-position: 0% 50%;
-  }
-  50% {
-    background-position: 100% 50%;
-  }
-  100% {
-    background-position: 0% 50%;
-  }
-}
-
-@keyframes bounceIn {
-  0% {
-    transform: translateY(-50px);
-    opacity: 0;
-  }
-  60% {
-    transform: translateY(10px);
-    opacity: 1;
-  }
-  100% {
-    transform: translateY(0);
-  }
-}
-
-@keyframes emojiWave {
-  0%,
-  100% {
-    transform: rotate(0deg);
-  }
-  25% {
-    transform: rotate(10deg);
-  }
-  50% {
-    transform: rotate(-10deg);
-  }
-  75% {
-    transform: rotate(10deg);
-  }
-}
-
-@keyframes fadeIn {
-  0% {
-    opacity: 0;
-    transform: translateY(20px);
-  }
-  100% {
-    opacity: 1;
-    transform: translateY(0);
   }
 }

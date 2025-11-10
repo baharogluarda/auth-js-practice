@@ -1,4 +1,5 @@
-@import "../../styles/variables";
+// SCSS değişkenlerini modül olarak dahil ediyoruz
+@use "../../styles/variables" as v;
 
 .login-form {
   display: flex;
@@ -7,16 +8,15 @@
   align-items: center;
   min-height: 100vh;
   padding: 2rem;
-  background: $background-color;
+  background: v.$background-color;
 
   .card {
-    background: $card-bg;
+    background: v.$card-bg;
     border-radius: 1rem;
-    box-shadow: 0 8px 20px $shadow-color;
+    box-shadow: 0 8px 20px v.$shadow-color;
     width: 100%;
-    max-width: 600px;
-    border: 1px solid $border-color;
-    transition: transform $transition-fast, box-shadow $transition-fast;
+    border: 1px solid v.$border-color;
+    transition: transform v.$transition-fast, box-shadow v.$transition-fast;
 
     &:hover {
       transform: scale(1.01);
@@ -33,7 +33,7 @@
       h4 {
         text-align: center;
         margin-bottom: 2rem;
-        color: $text-color;
+        color: v.$text-color;
         font-weight: 600;
       }
 
@@ -43,51 +43,52 @@
         .form-control {
           border-radius: 50px;
           padding: 0.75rem 1.5rem;
-          border: 1px solid $border-color;
-          background-color: darken($card-bg, 2%);
-          color: $text-color;
-          transition: all $transition-fast;
+          border: 1px solid v.$border-color;
+          background-color: darken(v.$card-bg, 2%);
+          color: v.$text-color;
+          transition: all v.$transition-fast;
 
           &:focus {
-            border-color: $primary-color;
-            box-shadow: 0 0 0 0.2rem rgba($primary-color, 0.3);
+            border-color: v.$primary-color;
+            box-shadow: 0 0 0 0.2rem rgba(v.$primary-color, 0.3);
           }
         }
 
         .input-group-text {
           border-radius: 0 50px 50px 0 !important;
-          background-color: $secondary-color;
-          border: 1px solid $border-color;
-          transition: background-color $transition-fast;
-
-          &:hover {
-            background-color: lighten($secondary-color, 5%);
-          }
+          background-color: v.$secondary-color;
+          border: 1px solid v.$border-color;
+          transition: background-color v.$transition-fast;
 
           i {
             font-size: 1.2rem;
-            color: $accent-color;
+            color: v.$accent-color;
           }
         }
 
         .btn {
           border-radius: 50px;
           border: none;
-          background: $gradient-main;
+          background: v.$gradient-main;
           color: #fff;
           font-weight: 600;
           font-size: 1rem;
           margin-top: 1rem;
-          transition: all $transition-fast;
+          transition: all v.$transition-fast;
 
           &:hover {
-            background: linear-gradient(90deg, $accent-color, $primary-dark);
-            box-shadow: 0 4px 15px rgba($accent-color, 0.3);
+            background: linear-gradient(
+              90deg,
+              v.$accent-color,
+              v.$primary-dark
+            );
+            box-shadow: 0 4px 15px rgba(v.$accent-color, 0.3);
           }
         }
       }
     }
   }
+
   @media (max-width: 400px) {
     padding: 1rem;
 

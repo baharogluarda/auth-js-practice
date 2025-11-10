@@ -6,7 +6,7 @@ const TextInput = (props) => {
 
   return (
     <FormGroup className={classname} controlId={rest.name}>
-      <FormLabel>{label}</FormLabel>
+      <FormLabel className="text-white">{label}</FormLabel>
       <FormControl isInvalid={!!error} size="lg" {...rest} />
       <FormControl.Feedback type="invalid">{error}</FormControl.Feedback>
     </FormGroup>

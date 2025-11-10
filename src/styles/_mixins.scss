@@ -1,0 +1,32 @@
+// Animasyon Mixins
+
+@mixin gradientFlow($duration: 8s, $ease: ease, $infinite: infinite) {
+  animation: gradientFlow $duration $ease $infinite;
+}
+
+@mixin bounceIn($duration: 1s, $ease: ease) {
+  animation: bounceIn $duration $ease;
+}
+
+@mixin fadeIn($duration: 2s, $ease: ease-in, $forwards: forwards) {
+  animation: fadeIn $duration $ease $forwards;
+}
+
+// 🔁 Keyframes
+@keyframes gradientFlow {
+  0% { background-position: 0% 50%; }
+  50% { background-position: 100% 50%; }
+  100% { background-position: 0% 50%; }
+}
+
+@keyframes bounceIn {
+  0% { transform: translateY(-50px); opacity: 0; }
+  60% { transform: translateY(10px); opacity: 1; }
+  100% { transform: translateY(0); }
+}
+
+
+@keyframes fadeIn {
+  0% { opacity: 0; transform: translateY(20px); }
+  100% { opacity: 1; transform: translateY(0); }
+}

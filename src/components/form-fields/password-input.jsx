@@ -12,7 +12,7 @@ export const PasswordInput = (props) => {
 
   return (
     <FormGroup className={className} controlId={rest.name}>
-      <FormLabel>{label}</FormLabel>
+      <FormLabel className="text-white">{label}</FormLabel>
 
       <InputGroup>
         <FormControl isInvalid={!!error} size="lg" type={type} {...rest} />
