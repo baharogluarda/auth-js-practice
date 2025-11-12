@@ -1,17 +1,26 @@
 import NextAuth from "next-auth";
 import Credentials from "next-auth/providers/credentials";
+import { login } from "./services/auth-service";
 
 const config = {
   providers: [
     Credentials({
-      credentials: {
-        username: { label: "Username" },
-        password: { label: "Password", type: "password" },
-      },
-      async authorize({ request }) {
-        const response = await fetch(request);
-        if (!response.ok) return null;
-        return (await response.json()) ?? null;
+      authorize: async (credentials) => {
+        // bu method dan donecek data userSession i olusturur
+        const res = await login(credentials);
+        const data = await res.json();
+
+        if (!res.ok) {
+          return null; // login basarili degilse null dondurur
+        }
+
+        const payload = {
+          user: { ...data },
+          accessToken: data.token, // API'den gelen JWT
+        };
+        delete payload.user.token;
+
+        return payload;
       },
     }),
   ],

@@ -10,6 +10,7 @@
   },
   "dependencies": {
     "bootstrap": "^5.3.8",
+    "jsonwebtoken": "^9.0.2",
     "next": "16.0.1",
     "next-auth": "^5.0.0-beta.30",
     "primeicons": "^7.0.0",
