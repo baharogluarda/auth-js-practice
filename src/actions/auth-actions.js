@@ -1,5 +1,6 @@
 "use server";
-import { signIn, signOut } from "@/auth";
+
+import { signIn } from "@/auth";
 import { AuthSchema } from "@/helpers/auth-schema";
 import {
   convertFormDataToJSON,
@@ -15,10 +16,7 @@ export const loginAction = async (prevState, formData) => {
   try {
     AuthSchema.validateSync(fields, { abortEarly: false });
 
-    await signIn("credentials", fields);
-    // auth.js dosyasindaki, provider altindaki authorize methoduna gider.
-    // Eger login basarili ise kullanici giris yapmis olur
-    // login basarili degise bu satirda hata firlatilir.
+    await signIn("credentials", { ...fields, redirect: false });
   } catch (err) {
     if (err instanceof YupValidationError) {
       return transformYupErrors(err.inner, fields);

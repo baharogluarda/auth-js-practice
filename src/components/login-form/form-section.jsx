@@ -15,13 +15,13 @@ export const FormSection = () => {
         label="Username"
         name="username"
         error={state?.errors?.username}
-        defaultValue={state.data.username ?? "baharogluarda"}
+        defaultValue={state?.data?.username ?? "user"}
       />
       <PasswordInput
         label="Password"
         name="password"
         error={state?.errors?.password}
-        defaultValue={state.data.password ?? "a1R2d3A4"}
+        defaultValue={state?.data?.password ?? "pass"}
       />
       <SubmitButton title="Login" />
     </Form>
