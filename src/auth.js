@@ -3,24 +3,25 @@ import Credentials from "next-auth/providers/credentials";
 import { login } from "./services/auth-service";
 import { getIsTokenValid, getIsUserAuthorized } from "./helpers/auth-helper";
 
-export const { handlers, signIn, signOut, auth } = NextAuth({
+const config = {
   providers: [
     Credentials({
-      name: "Credentials",
-      credentials: {
-        username: { label: "Username" },
-        password: { label: "Password", type: "password" },
-      },
-      async authorize(credentials) {
+      authorize: async (credentials) => {
         const res = await login(credentials);
         const data = await res.json();
 
-        if (!res.ok) return null;
+        if (!res.ok) {
+          return {
+            error: data.message || "Invalid credentials",
+          };
+        }
 
         const payload = {
           user: { username: data.username, role: data.role },
           accessToken: data.token,
         };
+        delete payload.user.token;
+        console.log("PAYLOAD:", payload);
 
         return payload;
       },
@@ -31,11 +32,15 @@ export const { handlers, signIn, signOut, auth } = NextAuth({
       return { ...token, ...user };
     },
     async session({ session, token }) {
-      if (!getIsTokenValid(token?.accessToken)) return null;
-      session.user = token.user;
-      session.accessToken = token.accessToken;
+      const { accessToken, user } = token;
+      if (!getIsTokenValid(accessToken)) return null;
+
+      session.user = user;
+      session.accessToken = accessToken;
       return session;
     },
   },
   pages: { signIn: "/login" },
-});
+};
+
+export const { handlers, signIn, signOut, auth } = NextAuth(config);

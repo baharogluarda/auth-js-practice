@@ -1,16 +1,19 @@
+"use client";
 import TextInput from "../form-fields/text-input";
 import { PasswordInput } from "../form-fields/password-input";
 import { SubmitButton } from "../form-fields/submit-button";
 import { initialState } from "@/helpers/form-validation";
 import { useActionState } from "react";
-import { Form } from "react-bootstrap";
+import { Alert, Form } from "react-bootstrap";
 import { loginAction } from "@/actions/auth-actions";
 
 export const FormSection = () => {
   const [state, formAction] = useActionState(loginAction, initialState);
+  console.log("STATE:", state);
 
   return (
     <Form action={formAction}>
+      {!state.ok && <Alert variant="danger">Invalid Credentials</Alert>}
       <TextInput
         label="Username"
         name="username"
