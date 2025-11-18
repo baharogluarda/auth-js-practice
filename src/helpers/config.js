@@ -7,4 +7,4 @@ export const header = {
   subtitle: "Why dont u login so i can remember you😇",
 };
 
-export const loginFormTitle = "Please enter your Username and Password";
+export const loginFormTitle = "Please enter your \nUsername and Password";

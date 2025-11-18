@@ -11,9 +11,8 @@ const config = {
         const data = await res.json();
 
         if (!res.ok) {
-          return {
-            error: data.message || "Invalid credentials",
-          };
+          // NextAuth hata durumu: null dön
+          return null;
         }
 
         const payload = {
@@ -28,6 +27,26 @@ const config = {
     }),
   ],
   callbacks: {
+    authorized({ auth, request }) {
+      // auth: { user, accessToken, ... }
+
+      // 1) Kullanıcı login değilse → direkt RED
+      if (!auth?.accessToken) return false;
+
+      // 2) Token süresi geçmişse → RED
+      if (!getIsTokenValid(auth.accessToken)) return false;
+
+      // 3) İstenirse rol kontrolü
+      const pathname = request.nextUrl.pathname;
+
+      // Örnek: /admin için sadece admin rolü izinli olsun
+      if (pathname.startsWith("/admin")) {
+        return getIsUserAuthorized(auth.user.role, "admin");
+      }
+
+      // 4) Diğer tüm sayfalara giriş izni
+      return true;
+    },
     async jwt({ token, user }) {
       return { ...token, ...user };
     },
