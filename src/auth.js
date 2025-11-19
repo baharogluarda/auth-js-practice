@@ -28,23 +28,12 @@ const config = {
   ],
   callbacks: {
     authorized({ auth, request }) {
-      // auth: { user, accessToken, ... }
+      const { pathname } = request.nextUrl;
+      if (pathname === "/") return true;
 
-      // 1) Kullanıcı login değilse → direkt RED
-      if (!auth?.accessToken) return false;
+      /* if (!auth?.accessToken) return false;
+      if (!getIsTokenValid(auth.accessToken)) return false; */
 
-      // 2) Token süresi geçmişse → RED
-      if (!getIsTokenValid(auth.accessToken)) return false;
-
-      // 3) İstenirse rol kontrolü
-      const pathname = request.nextUrl.pathname;
-
-      // Örnek: /admin için sadece admin rolü izinli olsun
-      if (pathname.startsWith("/admin")) {
-        return getIsUserAuthorized(auth.user.role, "admin");
-      }
-
-      // 4) Diğer tüm sayfalara giriş izni
       return true;
     },
     async jwt({ token, user }) {
@@ -59,7 +48,7 @@ const config = {
       return session;
     },
   },
-  pages: { signIn: "/login" },
+  pages: { signIn: "/" },
 };
 
 export const { handlers, signIn, signOut, auth } = NextAuth(config);
