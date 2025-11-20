@@ -1,6 +1,6 @@
 "use server";
 
-import { signIn } from "@/auth";
+import { signIn, signOut } from "@/auth";
 import { AuthSchema } from "@/helpers/auth-schema";
 import {
   convertFormDataToJSON,

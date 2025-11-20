@@ -29,11 +29,6 @@ const config = {
   callbacks: {
     authorized({ auth, request }) {
       const { pathname } = request.nextUrl;
-      if (pathname === "/") return true;
-
-      /* if (!auth?.accessToken) return false;
-      if (!getIsTokenValid(auth.accessToken)) return false; */
-
       return true;
     },
     async jwt({ token, user }) {
@@ -49,6 +44,7 @@ const config = {
     },
   },
   pages: { signIn: "/" },
+  trustHost: true,
 };
 
 export const { handlers, signIn, signOut, auth } = NextAuth(config);

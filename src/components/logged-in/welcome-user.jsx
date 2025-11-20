@@ -1,5 +1,11 @@
 import React from "react";
+import { ButtonLogout } from "../buttons/button-logout";
 
 export const WelcomeUser = ({ user }) => {
-  return <div>Welcome {user}</div>;
+  return (
+    <>
+      Welcome {user}
+      <ButtonLogout />
+    </>
+  );
 };
