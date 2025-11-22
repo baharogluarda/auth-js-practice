@@ -13,7 +13,7 @@ export const ButtonLogout = (props) => {
 
   return (
     <Button {...props} onClick={handleLogout}>
-      <i className="pi pi-sign-out"></i> LOGOUT
+      <i className="pi pi-sign-out"></i> LogOut
     </Button>
   );
 };
