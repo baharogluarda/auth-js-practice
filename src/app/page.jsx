@@ -1,6 +1,6 @@
 import { auth } from "@/auth";
 import Header from "@/components/header/header";
-import { WelcomeUser } from "@/components/logged-in/welcome-user";
+import { WelcomeUser } from "@/components/authorized-user/authorized-user";
 import { LoginForm } from "@/components/login-form/login-form";
 
 export default async function HomePage() {
@@ -10,7 +10,7 @@ export default async function HomePage() {
 
   return (
     <>
-      <Header />
+      <Header session={session}/>
       {isLoggedIn ? (
         <WelcomeUser user={session.user.username} />
       ) : (
