@@ -1,12 +1,46 @@
 @use "@/styles/variables" as v;
 
-.container {
-  padding: 5rem 5rem;
-  display: flex;
-  justify-content: center;
-  align-items: center;
-  flex-direction: column;
-  background-color: v.$primary-color;
+.authorized-user {
+  padding: 4rem 2rem;
+  background-color: v.$card-bg;
+  border-radius: 1rem;
+  text-align: center;
+  box-shadow: 0 8px 20px v.$shadow-color;
 
-  margin-top: 100px;
+  .welcome-title {
+    font-size: 2.5rem;
+    font-weight: 700;
+    color: v.$accent-color;
+    margin-bottom: 1.5rem;
+
+    span {
+      color: v.$primary-color;
+    }
+  }
+
+  .welcome-text {
+    font-size: 1.2rem;
+    color: v.$text-muted;
+    max-width: 600px;
+    margin: 0 auto 2rem auto;
+    line-height: 1.7;
+  }
+
+  button {
+    margin-top: 1rem;
+  }
+}
+
+@media (max-width: 576px) {
+  .authorized-user {
+    padding: 2rem 1rem;
+
+    .welcome-title {
+      font-size: 1.8rem;
+    }
+
+    .welcome-text {
+      font-size: 1rem;
+    }
+  }
 }

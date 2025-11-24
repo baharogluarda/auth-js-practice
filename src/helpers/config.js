@@ -3,8 +3,15 @@ export const baseUrl = "http://localhost:3000";
 export const LOGIN_API_ROUTE = `${baseUrl}/api/backend/login`;
 
 export const header = {
-  title: "Hey.. uh, What was your name🤔",
-  subtitle: "Why dont u login so i can remember you😇",
+  authenticated: {
+    title: "AHA! There you are! I totally remember you now 😎",
+    subtitle: "Okay okay… maybe I forgot for a second 😅 But welcome back!",
+  },
+  guest: {
+    title: "Hey, wait… who are you again? 🤔",
+    subtitle: "Log in and help my terrible memory, pretty please 😇",
+  },
 };
 
-export const loginFormTitle = "Please enter your \nUsername and Password";
+export const loginFormTitle =
+  "Alright genius, enter your Username and Password 👇";

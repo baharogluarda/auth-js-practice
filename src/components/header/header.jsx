@@ -8,11 +8,17 @@ const Header = ({ session }) => {
   return (
     <>
       {session ? (
-        <header className="header">Hi {username} hahahaha, i remember u now</header>
+        <header className="header">
+          <h1>
+            {header.authenticated.title} {username}!
+          </h1>
+          <br />
+          <h2>{header.authenticated.subtitle}</h2>
+        </header>
       ) : (
         <header className="header">
-          <h1>{header.title}</h1>
-          <h2>{header.subtitle}</h2>
+          <h1>{header.guest.title}</h1>
+          <h2>{header.guest.subtitle}</h2>
         </header>
       )}
     </>
