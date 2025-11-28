@@ -13,5 +13,11 @@ export const header = {
   },
 };
 
+export const welcomeBack = {
+  title: "Welcome back,",
+  icon: "👋",
+  warn: "Do not log out, or I might forget you again! 😬",
+};
+
 export const loginFormTitle =
   "Alright genius, enter your Username and Password 👇";

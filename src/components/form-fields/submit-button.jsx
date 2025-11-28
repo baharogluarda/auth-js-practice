@@ -2,6 +2,7 @@
 import React from "react";
 import { Button, Spinner } from "react-bootstrap";
 import { useFormStatus } from "react-dom";
+import styles from "./submit-button.module.scss";
 
 export const SubmitButton = ({
   title,
@@ -14,7 +15,7 @@ export const SubmitButton = ({
   return (
     <Button
       type="submit"
-      className={className}
+      className={`${className} ${styles.submitBtn}`}
       size="lg"
       disabled={pending}
       variant="primary"

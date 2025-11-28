@@ -62,25 +62,7 @@
           }
         }
 
-        .btn {
-          border-radius: 50px;
-          border: none;
-          background: v.$gradient-main;
-          color: #fff;
-          font-weight: 600;
-          font-size: 1rem;
-          margin-top: 1rem;
-          transition: all v.$transition-fast;
-
-          &:hover {
-            background: linear-gradient(
-              90deg,
-              v.$accent-color,
-              v.$primary-dark
-            );
-            box-shadow: 0 4px 15px rgba(v.$accent-color, 0.3);
-          }
-        }
+        
       }
     }
   }

@@ -2,6 +2,7 @@
 import { logoutAction } from "@/actions/auth-actions";
 import React from "react";
 import { Button } from "react-bootstrap";
+import "./button-logout.scss";
 
 export const ButtonLogout = (props) => {
   const handleLogout = async () => {
@@ -12,8 +13,10 @@ export const ButtonLogout = (props) => {
   };
 
   return (
-    <Button {...props} onClick={handleLogout}>
-      <i className="pi pi-sign-out"></i> LogOut
-    </Button>
+    <div className="logout-container">
+      <Button {...props} onClick={handleLogout}>
+        <i className="pi pi-sign-out"></i> LogOut
+      </Button>
+    </div>
   );
 };

@@ -1,8 +1,8 @@
 import { auth } from "@/auth";
 import Header from "@/components/header/header";
-import { AuthorizedUser } from "@/components/authorized-user/authorized-user";
 import { LoginForm } from "@/components/login-form/login-form";
 import { Spacer } from "@/components/shared/spacer";
+import { WelcomeBack } from "@/components/welcome-back/welcome-back";
 
 export default async function HomePage() {
   const session = await auth();
@@ -14,7 +14,7 @@ export default async function HomePage() {
       <Header session={session} />
       <Spacer mB="150"/>
       {isLoggedIn ? (
-        <AuthorizedUser user={session.user.username} />
+        <WelcomeBack user={session.user.username} />
       ) : (
         <LoginForm />
       )}

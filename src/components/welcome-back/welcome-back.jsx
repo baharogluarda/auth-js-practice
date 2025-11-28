@@ -1,18 +1,18 @@
 import React from "react";
 import { ButtonLogout } from "../shared/button-logout";
-import "./authorized-user.scss";
+import "./welcome-back.scss";
 import { Container } from "react-bootstrap";
+import { welcomeBack } from "../../helpers/config";
 
-export const AuthorizedUser = ({ user }) => {
+export const WelcomeBack = ({ user }) => {
   return (
     <Container className="authorized-user">
       <h1 className="welcome-title">
-        Welcome back, <span>{user}</span> 👋
+        {welcomeBack.title} <span>{user}</span> {welcomeBack.icon}
       </h1>
 
       <p className="welcome-text">
-        I swear I didn’t forget you this time… probably 😅  
-        Anyway, good to see you again. Ready to do cool stuff?
+        {welcomeBack.warn}
       </p>
 
       <ButtonLogout />
