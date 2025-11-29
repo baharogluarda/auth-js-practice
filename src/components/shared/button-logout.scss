@@ -1,6 +1,61 @@
 @use "@/styles/variables" as v;
 @use "@/styles/mixins" as m;
 
-.logout-container{
-    
+.logout-wrapper {
+  position: relative;
+  display: inline-block;
+}
+
+.logout-wrapper::after,
+.logout-wrapper::before {
+  content: "";
+  position: absolute;
+  height: calc(100% + 6px);
+  width: calc(100% + 6px);
+  background-image: conic-gradient(
+    from var(--angle),
+    transparent,
+    v.$primary-dark
+  );
+  top: 50%;
+  left: 50%;
+  translate: -50% -50%;
+  z-index: 0;
+  border-radius: 0.5rem; 
+  animation: 3s spin linear infinite;
+}
+
+.logout-wrapper::before {
+  filter: blur(1.5rem);
+  opacity: 0.5;
+}
+
+@property --angle {
+  syntax: "<angle>";
+  initial-value: 0deg;
+  inherits: false;
+}
+
+@keyframes spin {
+  from {
+    --angle: 0deg;
+  }
+  to {
+    --angle: 360deg;
+  }
+}
+
+.btn-logout {
+  position: relative;
+  z-index: 1;
+  border: 0;
+  margin: 0;
+  background: v.$primary-dark;
+  border-radius: 0.5rem;
+  padding: 0.6rem 1.2rem;
+
+  &:hover {
+    background: v.$hover-color !important;
+    transition: all v.$transition-slow;
+  }
 }

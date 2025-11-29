@@ -10,10 +10,12 @@ $border-color: #2c3a3a;
 $text-color: #e0e0e0;
 $text-muted: #a5a5a5;
 $shadow-color: rgba(0, 0, 0, 0.4);
+$hover-color: #03855e;
 
 // Geçişler ve Efektler
 $transition-fast: 0.25s ease;
 $transition-medium: 0.4s ease;
+$transition-slow: 0.6s ease;
 
 // Gradientler
 $gradient-main: linear-gradient(90deg, $primary-color, $primary-dark);
