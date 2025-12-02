@@ -1,10 +1,5 @@
-// styles/global.scss
-
-// Dış kütüphaneler için @import yerine @use kullanıyoruz
 @use "bootstrap/dist/css/bootstrap.min.css";
 @use "primeicons/primeicons.css";
-
-// Proje içi SCSS değişkenlerini global hale getiriyoruz
 @use "variables" as *;
 
 html,

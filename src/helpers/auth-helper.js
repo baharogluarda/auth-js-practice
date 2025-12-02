@@ -10,7 +10,7 @@ export const getIsTokenValid = (token) => {
 };
 
 export const getIsUserAuthorized = (role, targetPath) => {
-  // Basit örnek
+  // Simple rights configuration
   const rights = [{ urlRegex: /^\/dashboard/, roles: ["admin"] }];
 
   const userRight = rights.find((item) => item.urlRegex.test(targetPath));

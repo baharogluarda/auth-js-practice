@@ -1,4 +1,4 @@
-// Ana Renk Paleti
+// Color Variables
 $primary-color: #00b894;
 $primary-dark: #009975;
 $accent-color: #00ffb3;
@@ -12,11 +12,11 @@ $text-muted: #a5a5a5;
 $shadow-color: rgba(0, 0, 0, 0.4);
 $hover-color: #03855e;
 
-// Geçişler ve Efektler
+// Transitions
 $transition-fast: 0.25s ease;
 $transition-medium: 0.4s ease;
 $transition-slow: 0.6s ease;
 
-// Gradientler
+// Gradients
 $gradient-main: linear-gradient(90deg, $primary-color, $primary-dark);
 $gradient-accent: linear-gradient(260deg, #111818, #141c1a, #16322b, #121c18);

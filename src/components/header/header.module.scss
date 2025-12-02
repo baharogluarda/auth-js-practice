@@ -10,7 +10,7 @@
   text-align: center;
   background: v.$gradient-accent;
   background-size: 600% 600%;
-  @include m.gradientFlow; // mixin ile animasyonu ekledik
+  @include m.gradientFlow;
   color: v.$text-color;
   position: relative;
   box-shadow: 0 5px 20px v.$shadow-color;
@@ -19,7 +19,7 @@
   h1 {
     font-size: 3rem;
     margin-bottom: 1rem;
-    @include m.bounceIn; // bounceIn animasyonu
+    @include m.bounceIn;
     color: v.$accent-color;
   }
 
@@ -27,7 +27,7 @@
     font-size: 1.4rem;
     opacity: 0.8;
     color: v.$text-muted;
-    @include m.fadeIn; // fadeIn animasyonu
+    @include m.fadeIn;
   }
 
   &:hover {

@@ -1,13 +1,11 @@
-// src/proxy.js
-
-// Auth.js yapısından auth fonksiyonunu içe aktarıyoruz.
-// Bu fonksiyon, kullanıcı oturumlarını (session) ve kimlik doğrulamayı yönetir.
+// Import the `auth` function from Auth.js.
+// This handles user sessions and authentication.
 import { auth } from "@/auth";
 
-// Next.js 16'da middleware yerine artık "proxy" yapısı kullanılıyor.
-// Bu fonksiyon, her istekte (GET, POST vs.) çalışır.
-// Burada "auth(request)" döndürerek tüm istekleri Auth.js sistemine yönlendiriyoruz.
+// In Next.js 16 the `proxy` pattern replaces middleware.
+// This function runs for every incoming request (GET, POST, etc.).
+// We forward each request to the Auth.js handler by returning `auth(request)`.
 export async function proxy(request) {
-  // Tüm gelen istekleri Auth.js'e yönlendir
+  // Forward all incoming requests to Auth.js
   return auth(request);
 }
