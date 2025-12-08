@@ -6,7 +6,7 @@ export async function POST(req) {
   const { username, password } = await req.json();
 
   // Simple hardcoded user validation
-  if (username === "user" && password === "pass") {
+  if (username === "arda" && password === "pass") {
     const payload = {
       username,
       role: "admin",

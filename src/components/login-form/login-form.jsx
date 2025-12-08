@@ -31,7 +31,7 @@ export const LoginForm = () => {
                   label="Username"
                   name="username"
                   error={state?.errors?.username}
-                  defaultValue={state?.data?.username || "user"}
+                  defaultValue={state?.data?.username || "arda"}
                 />
                 <PasswordInput
                   label="Password"

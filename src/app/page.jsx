@@ -7,7 +7,7 @@ import { WelcomeBack } from "@/components/welcome-back/welcome-back";
 export default async function HomePage() {
   const session = await auth();
   console.log("session", session);
-  const isLoggedIn = !!session?.user;
+  const isLoggedIn = Boolean(session?.user?.username);
 
   return (
     <>
