@@ -11,7 +11,7 @@ const config = {
         const data = await res.json();
 
         if (!res.ok) {
-          // NextAuth hata durumu: null dön
+          // NextAuth errro handling: return null
           return null;
         }
 

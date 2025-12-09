@@ -9,7 +9,7 @@ export const header = {
   },
   guest: {
     title: "Hey, wait… who are you again? 🤔",
-    subtitle: "Log in and help my terrible memory, pretty please 😇",
+    subtitle: "Why don't you log in so I can remember you? 😇",
   },
 };
 
