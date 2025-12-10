@@ -10,7 +10,7 @@ const Header = ({ session }) => {
       {session ? (
         <header className={styles.header}>
           <h1>
-            {header.authenticated.title} {username}!
+            {header.authenticated.title}
           </h1>
           <br />
           <h2>{header.authenticated.subtitle}</h2>

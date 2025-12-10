@@ -4,8 +4,8 @@ export const LOGIN_API_ROUTE = `${baseUrl}/api/backend/login`;
 
 export const header = {
   authenticated: {
-    title: "AHA! There you are! I totally remember you now 😎",
-    subtitle: "Okay okay… maybe I forgot for a second 😅 But welcome back!",
+    title: "AHA! There you are! I totally remember you now 😎!",
+    subtitle: "Sorry that I forgot, I have a terrible memory sometimes!",
   },
   guest: {
     title: "Hey, wait… who are you again? 🤔",

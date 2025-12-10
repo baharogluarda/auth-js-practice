@@ -20,8 +20,7 @@ const config = {
           accessToken: data.token,
         };
         delete payload.user.token;
-        console.log("PAYLOAD:", payload);
-
+        console.log("payload:", payload);
         return payload;
       },
     }),
@@ -44,10 +43,10 @@ const config = {
       if (!getIsTokenValid(accessToken)) return null;
 
       if (Object.keys(user).length === 0) return null;
-      
+
       session.user = user;
       session.accessToken = accessToken;
-      console.log("SESSION:", session);
+      console.log("session:", session);
       return session;
     },
   },

@@ -11,7 +11,6 @@ import { initialState } from "@/helpers/form-validation";
 
 export const LoginForm = () => {
   const [state, formAction] = useActionState(loginAction, initialState);
-  console.log("STATE:", state);
 
   return (
     <Container className="login-form">
